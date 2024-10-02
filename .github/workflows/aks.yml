@@ -35,11 +35,12 @@ jobs:
     
     - name: Build Docker image
       run: |
-	<your_ecr_push_commands> 2 and 3 cmd
+	docker build -t ecs-reg .
+ 	docker tag ecs-reg:latest 869935099473.dkr.ecr.ap-south-1.amazonaws.com/ecs-reg:latest
 
     - name: Push Docker image to ECR
       run: |
-        <your_ecr_push_commands> 4 cmd
+        docker push 869935099473.dkr.ecr.ap-south-1.amazonaws.com/ecs-reg:latest
  
     - name: Azure Login
       uses: azure/login@v1
