@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
       - name: regapp
-        image: 869935099473.dkr.ecr.ap-south-1.amazonaws.com/docker-image:latest         # after running the workflow for first time
+        image: 869935099473.dkr.ecr.ap-south-1.amazonaws.com/ecs-reg:219dff3831f4b92e6309c6a3b047d3ee5deb1941         # after running the workflow for first time
         imagePullPolicy: Always
         ports:
         - containerPort: 8080
