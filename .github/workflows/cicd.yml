@@ -47,13 +47,13 @@ jobs:
         id: task-def
         uses: aws-actions/amazon-ecs-render-task-definition@v1
         with:
-          task-definition: ecstaskdefinition.json
-          container-name: ecscontainer
+          task-definition: main.json
+          container-name: gya-con-1
           image: ${{ steps.build-image.outputs.image }}    
       - name: Deploy Amazon ECS task definition
         uses: aws-actions/amazon-ecs-deploy-task-definition@v1
         with:
           task-definition: ${{ steps.task-def.outputs.task-definition }}
-          service: cluster-service
-          cluster: ecscluster
+          service: gya-ser-2121
+          cluster: gya-1
           wait-for-service-stability: true
