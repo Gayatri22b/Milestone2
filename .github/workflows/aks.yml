@@ -39,7 +39,6 @@ jobs:
     - name: Push Docker image to ECR
       run: |
         docker push 869935099473.dkr.ecr.ap-south-1.amazonaws.com/ecs-reg:latest
-	
     - name: Azure Login
       uses: azure/login@v1
       with:
