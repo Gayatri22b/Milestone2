@@ -6,9 +6,9 @@ on:
     branches: [ main ]
 env:
  
-  ECR_REPOSITORY: docker-image
+  ECR_REPOSITORY: ecs-reg
  
-  EKS_CLUSTER_NAME: my-cluster010101
+  EKS_CLUSTER_NAME: ab-sudo
  
   AWS_REGION: ap-south-1
 jobs:
@@ -85,7 +85,6 @@ jobs:
         IMAGE_TAG: ${{ steps.commit.outputs.short }}
  
       run: |
-         kubectl rollout restart deployment/regapp-deployment
          kubectl apply -f regapp-deploy.yml
          kubectl apply -f regapp-service.yml
          
